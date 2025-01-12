@@ -1,5 +1,6 @@
 import { Command } from "cmdk";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { FiLink, FiLogOut, FiPhone } from "react-icons/fi";
 
 export const CommandMenu = ({
   open,
@@ -37,22 +38,32 @@ export const CommandMenu = ({
         <Command.Input
           value={value}
           onValueChange={setValue}
-          placeholder="what do you need?"
+          placeholder="What do you need?"
           className="relative border-b border-stone-300 p-3 text-lg w-full placeholder:text-stone-400 focus:outline-none"
         />
-        <Command.List>
+        <Command.List className="p-3">
           <Command.Empty>
             No results found for <span className="text-red-500">"{value}"</span>
           </Command.Empty>
 
-          <Command.Group heading="Letters">
-            <Command.Item>a</Command.Item>
-            <Command.Item>b</Command.Item>
-            <Command.Separator />
-            <Command.Item>c</Command.Item>
+          <Command.Group
+            heading="Integrations"
+            className="text-sm mb-3 text-stone-400"
+          >
+            <Command.Item className="flex cursor-pointer transition-colors p-2 text-sm text-stone-950 hover:bg-stone-200 rounded items-center gap-2">
+              <FiLink />
+              Link Services
+            </Command.Item>
+            <Command.Item className="flex cursor-pointer transition-colors p-2 text-sm text-stone-950 hover:bg-stone-200 rounded items-center gap-2">
+              <FiPhone />
+              Contact Support
+            </Command.Item>
           </Command.Group>
-
-          <Command.Item>Apple</Command.Item>
+          {/* more items can be added */}
+          <Command.Item className="flex cursor-pointer transition-colors p-2 text-sm text-stone-50 hover:bg-stone-700 bg-stone-950 rounded items-center gap-2">
+            <FiLogOut />
+            Sign Out
+          </Command.Item>
         </Command.List>
       </div>
     </Command.Dialog>
