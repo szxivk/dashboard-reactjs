@@ -1,5 +1,5 @@
 import { Command } from "cmdk";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export const CommandMenu = ({
   open,
@@ -8,6 +8,7 @@ export const CommandMenu = ({
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [value, setValue] = useState("");
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -33,9 +34,16 @@ export const CommandMenu = ({
         onClick={(e) => e.stopPropagation()}
         className="bg-white rounded-lg shadow-xl border-stone-300 border overflow-hidden w-full max-w-lg mx-auto mt-12"
       >
-        <Command.Input />
+        <Command.Input
+          value={value}
+          onValueChange={setValue}
+          placeholder="what do you need?"
+          className="relative border-b border-stone-300 p-3 text-lg w-full placeholder:text-stone-400 focus:outline-none"
+        />
         <Command.List>
-          <Command.Empty>No results found.</Command.Empty>
+          <Command.Empty>
+            No results found for <span className="text-red-500">"{value}"</span>
+          </Command.Empty>
 
           <Command.Group heading="Letters">
             <Command.Item>a</Command.Item>
