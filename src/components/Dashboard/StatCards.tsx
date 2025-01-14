@@ -44,7 +44,7 @@ const Card = ({
 }) => {
   return (
     <div className="p-4 rounded col-span-4 border border-stone-300">
-      <div className="flex mb-8 items-start justify-between">
+      <div className="flex mb-8 items-start justify-between flex-wrap gap-1">
         <div>
           <h3 className="text-stone-500 mb-2 text-sm">{title}</h3>
           <p className="text-3xl font-semibold">{value}</p>
