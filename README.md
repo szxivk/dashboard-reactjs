@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# About the project
+
+![a clean admin dashboard](design-image.png)
+
+Created a Clean/Minimal admin dashboard. My first proper React +
+Tailwind CSS Dashboard design code-along. Got extremely bored of doing The Odin Project course ,Paused it for now.
+
+❤️ - Followed along Tom is loading's [Tutorial](https://www.youtube.com/watch?v=vdxnBKRD7kU) - Please Like and Share.
+
+NOTE: This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
